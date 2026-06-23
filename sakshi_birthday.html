@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Sakshi 🎀</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:    #F2A7C3;
+      --pink-lt: #FAE0EB;
+      --pink-dk: #C0527A;
+      --peach:   #F7C5A0;
+      --peach-lt:#FEF0E6;
+      --lavender:#C9BBF0;
+      --lav-lt:  #EDE8FB;
+      --mint:    #A8D8C2;
+      --mint-lt: #DFF3EB;
+      --cream:   #FDF8F4;
+      --text:    #3D2B3D;
+      --text-md: #7A5C78;
+      --text-lt: #B99DB8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem 4rem;
+      background: linear-gradient(160deg, var(--pink-lt) 0%, var(--lav-lt) 50%, var(--peach-lt) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero canvas {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Pacifico', cursive;
+      font-size: 1rem;
+      color: var(--pink-dk);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.05;
+      position: relative;
+    }
+
+    .hero-name span {
+      color: var(--pink-dk);
+      font-style: italic;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-md);
+      margin-top: 1rem;
+      font-weight: 300;
+      max-width: 420px;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .flower-row {
+      font-size: 1.6rem;
+      margin: 1.5rem 0;
+      position: relative;
+      animation: sway 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes sway {
+      from { transform: rotate(-3deg); }
+      to   { transform: rotate(3deg); }
+    }
+
+    /* ── COUNTDOWN ── */
+    .countdown {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      position: relative;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cd-unit {
+      background: white;
+      border-radius: 16px;
+      padding: 1rem 1.4rem;
+      min-width: 80px;
+      box-shadow: 0 2px 16px rgba(194, 82, 122, 0.1);
+    }
+
+    .cd-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--pink-dk);
+      display: block;
+      line-height: 1;
+    }
+
+    .cd-label {
+      font-size: 11px;
+      color: var(--text-lt);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 5rem 1.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pink-dk);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    /* ── REASONS ── */
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .reason-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      border: 1.5px solid transparent;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .reason-card:hover { transform: translateY(-4px); border-color: var(--pink); }
+
+    .reason-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+    .reason-card:nth-child(3n+1)::before { background: var(--pink); }
+    .reason-card:nth-child(3n+2)::before { background: var(--lavender); }
+    .reason-card:nth-child(3n+3)::before { background: var(--peach); }
+
+    .reason-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--pink-lt);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .reason-text {
+      font-size: 15px;
+      color: var(--text-md);
+      line-height: 1.6;
+    }
+
+    /* ── TIMELINE / MEMORIES ── */
+    .memories-bg {
+      background: linear-gradient(135deg, var(--lav-lt), var(--pink-lt));
+    }
+
+    .memories-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--pink), var(--lavender), var(--peach));
+      border-radius: 2px;
+    }
+
+    .tl-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: -2rem;
+      top: 4px;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: white;
+      border: 3px solid var(--pink);
+    }
+
+    .tl-item:nth-child(2) .tl-dot { border-color: var(--lavender); }
+    .tl-item:nth-child(3) .tl-dot { border-color: var(--peach); }
+    .tl-item:nth-child(4) .tl-dot { border-color: var(--mint); }
+    .tl-item:nth-child(5) .tl-dot { border-color: var(--pink); }
+
+    .tl-year {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--pink-dk);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .tl-text {
+      font-size: 16px;
+      color: var(--text);
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+
+    /* ── WISHES ── */
+    .wishes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .wish-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 2px 20px rgba(194, 82, 122, 0.08);
+    }
+
+    .wish-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .wish-author {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--pink-dk);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wish-author::before {
+      content: '';
+      display: inline-block;
+      width: 24px; height: 2px;
+      background: var(--pink);
+      border-radius: 2px;
+    }
+
+    /* ── LETTER ── */
+    .letter-wrap {
+      background: white;
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: 0 4px 32px rgba(194, 82, 122, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter-wrap::after {
+      content: '🎀';
+      position: absolute;
+      top: -10px; right: 24px;
+      font-size: 2.5rem;
+    }
+
+    .letter-body {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.9;
+      color: var(--text);
+    }
+
+    .letter-body p { margin-bottom: 1rem; }
+
+    .letter-sig {
+      margin-top: 1.5rem;
+      font-family: 'Pacifico', cursive;
+      font-size: 1.3rem;
+      color: var(--pink-dk);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--text);
+      color: var(--text-lt);
+      font-size: 14px;
+    }
+
+    footer .big-heart {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.2); }
+    }
+
+    footer p { margin-top: 0.5rem; color: #9B8A9A; }
+
+    /* ── EDIT BADGE ── */
+    .edit-hint {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      background: var(--pink-dk);
+      color: white;
+      font-size: 12px;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    @media (max-width: 600px) {
+      .letter-wrap { padding: 2rem 1.25rem; }
+      .cd-unit { min-width: 64px; padding: 0.75rem 1rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <canvas id="confetti"></canvas>
+
+  <p class="hero-eyebrow">🌸 June 23 · A very special day 🌸</p>
+
+  <h1 class="hero-name">Happy Birthday,<br><span>Sakshi</span></h1>
+
+  <p class="hero-sub">Today the whole world feels a little warmer, a little brighter — because you're in it. Here's to you! 🎂</p>
+
+  <div class="flower-row">🌸 🌷 🌼 🌸 🌷 🌼 🌸</div>
+
+  <div class="countdown" id="countdown-wrap">
+    <div class="cd-unit"><span class="cd-num" id="cd-d">0</span><span class="cd-label">Days</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-h">0</span><span class="cd-label">Hours</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-m">0</span><span class="cd-label">Mins</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-s">0</span><span class="cd-label">Secs</span></div>
+  </div>
+  <p id="bday-msg" style="display:none; margin-top:1.5rem; font-family:'Pacifico',cursive; font-size:1.4rem; color:var(--pink-dk);">🎉 It's TODAY! Happy Birthday! 🎉</p>
+</div>
+
+<!-- ── REASONS ── -->
+<section>
+  <p class="section-eyebrow">why we love you</p>
+  <h2 class="section-title">10 reasons Sakshi<br>makes life better ✨</h2>
+  <!-- ✏️ EDIT: Change these reasons to real things about your friend! -->
+  <div class="reasons-grid">
+    <div class="reason-card"><div class="reason-num">01</div><div class="reason-text">You have a kind heart girl and pure intentions.</div></div>
+    <div class="reason-card"><div class="reason-num">02</div><div class="reason-text">You always know what to say when things get hard.</div></div>
+    <div class="reason-card"><div class="reason-num">03</div><div class="reason-text">trust worth than other girls no comparision.</div></div>
+    <div class="reason-card"><div class="reason-num">04</div><div class="reason-text">You make even the most ordinary days feel like an adventure.</div></div>
+    <div class="reason-card"><div class="reason-num">05</div><div class="reason-text">Your kindness is the kind that quietly changes people.</div></div>
+    <div class="reason-card"><div class="reason-num">06</div><div class="reason-text">You remember the little things that matter most.</div></div>
+    <div class="reason-card"><div class="reason-num">07</div><div class="reason-text">good friend rare friend .</div></div>
+    <div class="reason-card"><div class="reason-num">08</div><div class="reason-text">Your honesty is rare and precious — we trust you completely.</div></div>
+    <div class="reason-card"><div class="reason-num">09</div><div class="reason-text">You have the most spectacular taste in everything.</div></div>
+    <div class="reason-card"><div class="reason-num">10</div><div class="reason-text">Your personality stands apart from others.</div></div>
+  </div>
+</section>
+
+<!-- ── MEMORIES ── -->
+<div class="memories-bg">
+  <div class="memories-inner">
+    <p class="section-eyebrow">our journey together</p>
+    <h2 class="section-title" style="margin-bottom:2.5rem;">Moments we'll never forget 🎞️</h2>
+    <!-- ✏️ EDIT: Replace these with your real memories and years! -->
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">The Beginning</div>
+        <div class="tl-text">The day we first met — none of us knew yet that this would be the start of something forever.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">That Trip</div>
+        <div class="tl-text">We got completely lost , and found the best chai stall by accident. 10/10, no regrets.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">The Hard Times</div>
+        <div class="tl-text">When things got tough, you showed up — quietly, steadily, without being aske. We haven't forgotten that.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year"></div>
+        <div class="tl-text">kind hearted girl</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">Today & Beyond</div>
+        <div class="tl-text">Here we are, celebrating you — and we can't wait for every chapter that comes next.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── WISHES ── -->Simply put — life 
+<section>
+  <p class="section-eyebrow">from the people who love you</p>
+  <h2 class="section-title">Birthday wishes 💌</h2>
+  <!-- ✏️ EDIT: Add real wishes from friends and family! Copy a .wish-card block to add more. -->
+  <div class="wishes-grid">
+    <div class="wish-card">
+      <p class="wish-quote">"You deserve every good thing that comes your way. Wishing you a year as bright and beautiful as you are!"</p>
+      <div class="wish-author">Your Best Friend</div>
+    </div>
+    <div class="wish-card">
+      <p class="wish-quote">"You have a beautiful heart, a kind soul, and a personality that stands out from everyone else. I feel lucky to know someone as genuine and trustworthy as you.
+."</p>
+      <div class="wish-author">SAKSHI</div>
+    </div>
+    <div class="wish-card">
+      <p class="wish-quote">"May your day be filled with happiness, success, and everything you deserve. Stay the amazing person you are."</p>
+      <div class="wish-author">SAKSHI</div>
+    </div>
+  </div>
+</section>
+<!-- Round profile photo -->
+<img src="IMG_7652.JPG" style="width:180px; height:180px; border-radius:50%; object-fit:cover; border:5px solid #F2A7C3; display:block; margin:0 auto 1.5rem;">
+
+<!-- Soft rounded card photo -->
+<img src="7b7b93709d1d5834d0899925358be9db.jpg" style="width:100%; border-radius:20px; object-fit:cover; max-height:300px;">
+
+<!-- Small polaroid style -->
+<div style="background:white; padding:12px 12px 40px; border-radius:4px; box-shadow:0 4px 16px rgba(0,0,0,0.1); display:inline-block;">
+  <img src="IMG_7652.JPG" style="width:160px; height:160px; object-fit:cover; display:block;">
+</div><!-- ── LETTER ── -->
+<section style="padding-top: 0;">
+  <p class="section-eyebrow">a little note</p>
+  <h2 class="section-title">A letter for you 🌷</h2>
+  <!-- ✏️ EDIT: Write your personal message to Sakshi here! -->
+  <div class="letter-wrap">
+    <div class="letter-body">
+      <p>Dear Sakshi,</p>
+      <p>You have a kind heart and a calm nature. You treat people with care and respect like a mother. Your honesty and warmth set you apart in every space you enter. Your presence leaves a strong impression on others.</p>
+      <p>You carry yourself with confidence and grace. You stand different from people around you because you stay real in every situation. You very trusted person. You follow your own path and it shows in your actions.</p>
+      <pMay your day bring joy, peace, and steady progress in your goals. Stay the same strong and genuine person you a</p>
+      <p>Here's to you, Sakshi. Happy, happy birthday. 🎂</p>
+    </div>
+    <div class="letter-sig">With all my love 🌸</div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span class="big-heart">💗</span>
+  <strong style="font-family:'Pacifico',cursive; font-size:1.2rem; color:white;">Happy Birthday, Sakshi!</strong>
+  <p>Made with love · June 23</p>
+</footer>
+
+<!-- Edit hint badge -->
+<button class="edit-hint" onclick="alert('Open this file in any text editor (like VS Code or Notepad) and look for the ✏️ EDIT comments to customize it!')">✏️ How to edit</button>
+
+<script>
+  /* ── CONFETTI ── */
+  const canvas = document.getElementById('confetti');
+  const ctx = canvas.getContext('2d');
+  function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+  resize(); window.addEventListener('resize', resize);
+  const COLORS = ['#F2A7C3','#C9BBF0','#F7C5A0','#A8D8C2','#F9D5E5','#E8D5F5'];
+  const pieces = Array.from({length: 60}, () => ({
+    x: Math.random() * 1000, y: Math.random() * 600,
+    r: Math.random() * 5 + 3,
+    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    speed: Math.random() * 1.2 + 0.4,
+    tilt: Math.random() * 12 - 6,
+    d: Math.random() * 50,
+    shape: Math.random() > 0.5 ? 'circle' : 'rect'
+  }));
+  let angle = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    angle += 0.008;
+    pieces.forEach(p => {
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.tilt * Math.PI / 180);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = 0.7;
+      if (p.shape === 'circle') {
+        ctx.beginPath(); ctx.arc(0, 0, p.r, 0, Math.PI * 2); ctx.fill();
+      } else {
+        ctx.fillRect(-p.r, -p.r / 2, p.r * 2, p.r);
+      }
+      ctx.restore();
+      p.y += p.speed;
+      p.x += Math.sin(angle + p.d) * 0.6;
+      p.tilt += 0.15;
+      if (p.y > canvas.height + 10) { p.y = -10; p.x = Math.random() * canvas.width; }
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+
+  /* ── COUNTDOWN ── */
+  function tick() {
+    const now = new Date();
+    // 🎂 Birthday: June 23 — change year if needed
+    let bday = new Date(now.getFullYear(), 5, 23, 0, 0, 0); // Month is 0-indexed, so 5 = June
+    if (now >= bday) {
+      // Check if it's actually today
+      const isToday = now.getDate() === 23 && now.getMonth() === 5;
+      if (isToday) {
+        document.getElementById('countdown-wrap').style.display = 'none';
+        document.getElementById('bday-msg').style.display = 'block';
+        return;
+      }
+      bday.setFullYear(now.getFullYear() + 1);
+    }
+    const diff = bday - now;
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-d').textContent = d;
+    document.getElementById('cd-h').textContent = h;
+    document.getElementById('cd-m').textContent = m;
+    document.getElementById('cd-s').textContent = s;
+  }
+  tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
+<img src="IMG_7652.JPG" alt="Sakshi" />
